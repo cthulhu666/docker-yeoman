@@ -15,6 +15,7 @@ RUN add-apt-repository ppa:chris-lea/node.js -y; \
   npm install yo -g; \
   npm install -g generator-webapp generator-angular
 # Add a yeoman user because grunt doesn't like being root
-RUN adduser --disabled-password --gecos "" yeoman
+RUN adduser --disabled-password --gecos "" yeoman; \
+  echo "yeoman ALL=(ALL) NOPASSWD:ALL" >> /etc/sudoers
 # Always run as the yeoman user
 ENTRYPOINT ["/bin/su", "-", "yeoman"]

@@ -1,5 +1,5 @@
 # Yeoman with some generators and prerequisites
-FROM ubuntu/saucy
+FROM ubuntu:saucy
 MAINTAINER Kevin Littlejohn "kevin@littlejohn.id.au"
 # Fix the locale
 # Install node.js and requisites

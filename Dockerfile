@@ -3,7 +3,8 @@ FROM ubuntu:saucy
 MAINTAINER Kevin Littlejohn "kevin@littlejohn.id.au"
 # Fix the locale and install pre-requisites
 # Install pre-requisites
-RUN locale-gen en_US en_US.UTF-8 && dpkg-reconfigure locales; \
+RUN locale-gen en_US en_US.UTF-8; \
+  DEBIAN_FRONTEND=noninteractive dpkg-reconfigure locales; \
   apt-get -y -q update; \
   apt-get -y -q upgrade; \
   DEBIAN_FRONTEND=noninteractive apt-get -y -q install python-software-properties software-properties-common python g++ make git ruby-compass

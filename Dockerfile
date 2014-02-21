@@ -17,5 +17,7 @@ RUN add-apt-repository ppa:chris-lea/node.js -y; \
 # Add a yeoman user because grunt doesn't like being root
 RUN adduser --disabled-password --gecos "" yeoman; \
   echo "yeoman ALL=(ALL) NOPASSWD:ALL" >> /etc/sudoers
+# Expose the port
+EXPOSE 9000
 # Always run as the yeoman user
 ENTRYPOINT ["/bin/su", "-", "yeoman"]

@@ -1,5 +1,5 @@
 # Yeoman with some generators and prerequisites
-FROM ubuntu:saucy
+FROM ubuntu:trusty
 MAINTAINER Jakub Głuszecki <jakub.gluszecki@gmail.com>
 ENV DEBIAN_FRONTEND noninteractive
 RUN apt-get -yq update

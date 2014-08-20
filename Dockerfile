@@ -1,6 +1,6 @@
 # Yeoman with some generators and prerequisites
 FROM ubuntu:saucy
-MAINTAINER Kevin Littlejon <kevin@littlejohn.id.au>
+MAINTAINER Jakub Głuszecki <jakub.gluszecki@gmail.com>
 ENV DEBIAN_FRONTEND noninteractive
 RUN apt-get -yq update
 # Fix the locale and install pre-requisites

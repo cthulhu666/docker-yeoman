@@ -2,7 +2,7 @@
 FROM ubuntu:saucy
 MAINTAINER Kevin Littlejon <kevin@littlejohn.id.au>
 ENV DEBIAN_FRONTEND noninteractive
-RUN apt-get -yq update && apt-get -yq upgrade
+RUN apt-get -yq update
 # Fix the locale and install pre-requisites
 # Install pre-requisites
 RUN locale-gen en_US en_US.UTF-8; \

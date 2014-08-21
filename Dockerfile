@@ -26,5 +26,9 @@ EXPOSE 9000
 # set HOME so 'npm install' and 'bower install' don't write to /
 ENV HOME /home/yeoman
 
+RUN mkdir /src
+RUN chown yeoman:yeoman /src
+WORKDIR /src
+
 # Always run as the yeoman user
 USER yeoman

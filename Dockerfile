@@ -30,5 +30,11 @@ RUN mkdir /src
 RUN chown yeoman:yeoman /src
 WORKDIR /src
 
+ADD set_env.sh /usr/local/sbin/
+RUN chmod +x /usr/local/sbin/set_env.sh
+ENTRYPOINT ["set_env.sh"]
+
 # Always run as the yeoman user
 USER yeoman
+
+CMD /bin/bash

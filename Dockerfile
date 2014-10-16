@@ -13,7 +13,7 @@ RUN locale-gen en_US en_US.UTF-8 && \
 RUN add-apt-repository ppa:chris-lea/node.js -y && \
   apt-get -yq update && \
   DEBIAN_FRONTEND=noninteractive apt-get -yq install nodejs && \
-  npm install yo -g && \
+  npm install -g yo bower && \
   npm install -g generator-webapp generator-angular
 
 # Add a yeoman user because grunt doesn't like being root

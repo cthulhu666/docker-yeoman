@@ -38,3 +38,4 @@ ENTRYPOINT ["set_env.sh"]
 USER yeoman
 
 CMD /bin/bash
+

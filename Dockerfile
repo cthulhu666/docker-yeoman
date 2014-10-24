@@ -1,34 +1,32 @@
 # Yeoman with some generators and prerequisites
-FROM ubuntu:trusty
+FROM debian:jessie
+
 MAINTAINER Jakub Głuszecki <jakub.gluszecki@gmail.com>
+
 ENV DEBIAN_FRONTEND noninteractive
 
-# Fix the locale and install pre-requisites
-RUN locale-gen en_US en_US.UTF-8 && \
-  dpkg-reconfigure locales && \
-  apt-get -yq update && \
-  apt-get -yq install python-software-properties software-properties-common python g++ make git ruby-compass libfreetype6
-
 # Install node.js, then npm install yo and the generators
-RUN add-apt-repository ppa:chris-lea/node.js -y && \
-  apt-get -yq update && \
-  DEBIAN_FRONTEND=noninteractive apt-get -yq install nodejs && \
-  npm install -g npm@latest && \
-  npm install -g yo bower && \
-  npm install -g generator-webapp generator-angular
+RUN apt-get -yq update && \
+    apt-get -yq install git curl net-tools sudo bzip2 libpng-dev
+
+RUN curl -sL https://deb.nodesource.com/setup | bash - && \
+    apt-get -yq install nodejs
+
+RUN npm install -g npm@latest&& \
+    npm install -g yo bower grunt-cli && \
+    npm install -g generator-webapp generator-angular
 
 # Add a yeoman user because grunt doesn't like being root
 RUN adduser --disabled-password --gecos "" yeoman && \
   echo "yeoman ALL=(ALL) NOPASSWD:ALL" >> /etc/sudoers
 
 # Expose the port
-EXPOSE 9000
+# EXPOSE 9000
 
 # set HOME so 'npm install' and 'bower install' don't write to /
 ENV HOME /home/yeoman
 
-RUN mkdir /src
-RUN chown yeoman:yeoman /src
+RUN mkdir /src && chown yeoman:yeoman /src
 WORKDIR /src
 
 ADD set_env.sh /usr/local/sbin/

@@ -7,7 +7,7 @@ ENV DEBIAN_FRONTEND noninteractive
 
 # Install node.js, then npm install yo and the generators
 RUN apt-get -yq update && \
-    apt-get -yq install git curl net-tools sudo bzip2 libpng-dev
+    apt-get -yq install git curl net-tools sudo bzip2 libpng-dev locales-all
 
 RUN curl -sL https://deb.nodesource.com/setup | bash - && \
     apt-get -yq install nodejs
@@ -26,6 +26,8 @@ RUN adduser --disabled-password --gecos "" yeoman && \
 # set HOME so 'npm install' and 'bower install' don't write to /
 ENV HOME /home/yeoman
 
+ENV LANG en_US.UTF-8
+
 RUN mkdir /src && chown yeoman:yeoman /src
 WORKDIR /src
 
@@ -37,4 +39,3 @@ ENTRYPOINT ["set_env.sh"]
 USER yeoman
 
 CMD /bin/bash
-

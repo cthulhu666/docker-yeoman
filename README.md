@@ -11,5 +11,5 @@
 docker run -it --rm -v $(pwd):/src cthulhu666/yeoman yo webapp [your-app-name]
 ```
 
-See this Asciicast:
-https://asciinema.org/a/13240
+[See Asciicast](https://asciinema.org/a/13240)
+

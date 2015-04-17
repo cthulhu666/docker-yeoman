@@ -12,16 +12,16 @@ RUN apt-get -yq update && \
 RUN curl -sL https://deb.nodesource.com/setup | bash - && \
     apt-get -yq install nodejs
 
-RUN npm install -g npm@latest&& \
-    npm install -g yo bower grunt-cli && \
-    npm install -g generator-webapp generator-angular
+RUN npm install -g npm@2.8.3 && \
+    npm install -g yo@1.4.6 bower@1.4.1 grunt-cli@0.1.13 && \
+    npm install -g generator-webapp@0.5.1 generator-angular@0.11.1
 
 # Add a yeoman user because grunt doesn't like being root
 RUN adduser --disabled-password --gecos "" yeoman && \
   echo "yeoman ALL=(ALL) NOPASSWD:ALL" >> /etc/sudoers
 
 # Expose the port
-# EXPOSE 9000
+EXPOSE 9000
 
 # set HOME so 'npm install' and 'bower install' don't write to /
 ENV HOME /home/yeoman

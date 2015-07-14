@@ -53,3 +53,9 @@ Run it:
 ```
 docker run -it -p 9000:9000 -p 35729:35729 --rm -v $(pwd):/src [your-image-tag] grunt serve
 ```
+
+Remember to call npm and bower via docker:
+
+```
+docker run -it --rm -v $(pwd):/src [your-image-tag] npm install && bower install
+```

@@ -9,7 +9,7 @@ ENV DEBIAN_FRONTEND noninteractive
 RUN apt-get -yq update && \
     apt-get -yq install git curl net-tools sudo bzip2 libpng-dev locales-all
 
-RUN curl -sL https://deb.nodesource.com/setup | bash - && \
+RUN curl -sL https://deb.nodesource.com/setup_0.12 | bash - && \
     apt-get -yq install nodejs
 
 RUN npm install -g npm@2.13.0 && \

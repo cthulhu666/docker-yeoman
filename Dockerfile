@@ -13,8 +13,8 @@ RUN curl -sL https://deb.nodesource.com/setup | bash - && \
     apt-get -yq install nodejs
 
 RUN npm install -g npm@2.8.3 && \
-    npm install -g yo@1.4.6 bower@1.4.1 grunt-cli@0.1.13 && \
-    npm install -g generator-webapp@0.5.1 generator-angular@0.11.1
+    npm install -g yo@1.4.6 bower@1.4.1 grunt-cli@0.1.13 gulp@3.9.0 && \
+    npm install -g generator-webapp@0.5.1 generator-angular@0.11.1 generator-gulp-angular@0.12.1
 
 # Add a yeoman user because grunt doesn't like being root
 RUN adduser --disabled-password --gecos "" yeoman && \
@@ -39,3 +39,4 @@ ENTRYPOINT ["set_env.sh"]
 USER yeoman
 
 CMD /bin/bash
+

@@ -9,12 +9,11 @@ ENV DEBIAN_FRONTEND noninteractive
 RUN apt-get -yq update && \
     apt-get -yq install git curl net-tools sudo bzip2 libpng-dev locales-all
 
-RUN curl -sL https://deb.nodesource.com/setup_0.12 | bash - && \
+RUN curl -sL https://deb.nodesource.com/setup_5.x | bash - && \
     apt-get -yq install nodejs
 
-RUN npm install -g npm@2.13.0 && \
-    npm install -g yo@1.4.7 bower@1.4.1 grunt-cli@0.1.13 gulp@3.9.0 && \
-    npm install -g generator-webapp@1.0.1 generator-angular@0.12.1 generator-gulp-angular@0.12.1
+RUN npm install -g yo@1.5.0 bower@1.6.4 grunt-cli@0.1.13 gulp@3.9.0 && \
+    npm install -g generator-webapp@1.1.0 generator-angular@0.14.0 generator-gulp-angular@1.0.0
 
 # Add a yeoman user because grunt doesn't like being root
 RUN adduser --disabled-password --gecos "" yeoman && \

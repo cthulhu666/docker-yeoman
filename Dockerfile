@@ -1,16 +1,12 @@
 # Yeoman with some generators and prerequisites
-FROM debian:jessie
+FROM node:5-slim
 
 MAINTAINER Jakub Głuszecki <jakub.gluszecki@gmail.com>
 
 ENV DEBIAN_FRONTEND noninteractive
 
-# Install node.js, then npm install yo and the generators
 RUN apt-get -yq update && \
-    apt-get -yq install git curl net-tools sudo bzip2 libpng-dev locales-all
-
-RUN curl -sL https://deb.nodesource.com/setup_5.x | bash - && \
-    apt-get -yq install nodejs
+    apt-get -yq install git net-tools 
 
 RUN npm install -g yo@1.5.0 bower@1.6.4 grunt-cli@0.1.13 gulp@3.9.0 && \
     npm install -g generator-webapp@1.1.0 generator-angular@0.14.0 generator-gulp-angular@1.0.0

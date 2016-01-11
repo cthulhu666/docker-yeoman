@@ -6,7 +6,7 @@ MAINTAINER Jakub Głuszecki <jakub.gluszecki@gmail.com>
 ENV DEBIAN_FRONTEND noninteractive
 
 RUN apt-get -yq update && \
-    apt-get -yq install git net-tools 
+    apt-get -yq install git net-tools sudo
 
 RUN npm install -g yo@1.5.0 bower@1.6.4 grunt-cli@0.1.13 gulp@3.9.0 && \
     npm install -g generator-webapp@1.1.0 generator-angular@0.14.0 generator-gulp-angular@1.0.0

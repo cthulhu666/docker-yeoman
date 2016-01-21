@@ -3,6 +3,8 @@
 
 **Docker** image with base yeoman install, with a few generators pre-installed.
 
+[![Build Status](https://travis-ci.org/cthulhu666/docker-yeoman.svg?branch=master)](https://travis-ci.org/cthulhu666/docker-yeoman)
+
 ### Usage
 
 #### Scaffold web application using yeoman

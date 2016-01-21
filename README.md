@@ -7,8 +7,16 @@
 
 #### Scaffold web application using yeoman
 
+With Grunt:
+
 ```
-docker run -it --rm -v $(pwd):/src cthulhu666/yeoman yo webapp [your-app-name]
+docker run -it --rm -v $(pwd):/src cthulhu666/yeoman:grunt yo webapp [your-app-name]
+```
+
+With Gulp:
+
+```
+docker run -it --rm -v $(pwd):/src cthulhu666/yeoman:gulp yo gulp-webapp [your-app-name]
 ```
 
 [See Asciicast](https://asciinema.org/a/13240)
@@ -18,7 +26,7 @@ docker run -it --rm -v $(pwd):/src cthulhu666/yeoman yo webapp [your-app-name]
 Let's say we want a to run an angular app.
 
 ```
-docker run -it --rm -v $(pwd):/src cthulhu666/yeoman yo angular [your-app-name]
+docker run -it --rm -v $(pwd):/src cthulhu666/yeoman:grunt yo angular [your-app-name]
 ```
 
 Create Dockerfile inside your source directory:

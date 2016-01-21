@@ -14,9 +14,5 @@ describe "Dockerfile" do
     it { should exist }
     it { should have_home_directory '/home/yeoman' }
   end
-
-  
-
-
 end
 

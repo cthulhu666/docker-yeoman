@@ -8,7 +8,7 @@ ENV DEBIAN_FRONTEND noninteractive
 RUN apt-get -yq update && \
     apt-get -yq install git net-tools sudo
 
-RUN npm install -g --silent yo@1.6.0 bower@1.7.2 
+RUN npm install -g --silent yo@1.7.0 bower@1.7.6
 
 # Add a yeoman user because grunt doesn't like being root
 RUN adduser --disabled-password --gecos "" yeoman && \

@@ -3,6 +3,7 @@ require "spec_helper"
 describe "Dockerfile" do
   before(:all) do
     base_image = Docker::Image.build_from_dir('.')
+    base_image.tag(tag: '1.7.0')
     image = Docker::Image.build_from_dir('./gulp')
     set :docker_image, image.id
   end

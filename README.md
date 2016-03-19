@@ -15,6 +15,8 @@ With Grunt:
 docker run -it --rm -v $(pwd):/src cthulhu666/yeoman:grunt yo webapp [your-app-name]
 ```
 
+__From version 1.7.0 Grunt image is no longer maintained__
+
 With Gulp:
 
 ```

@@ -6,7 +6,7 @@ MAINTAINER Jakub Głuszecki <jakub.gluszecki@gmail.com>
 ENV DEBIAN_FRONTEND noninteractive
 
 RUN apt-get -yq update && \
-    apt-get -yq install git net-tools sudo
+    apt-get -yq install git net-tools sudo bzip2
 
 RUN npm install -g --silent yo@1.7.0 bower@1.7.6
 
